@@ -6,8 +6,8 @@ const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
-    const [confirmPassword, setConfirmPPassword] = useState("");
-    const [mode, setMode] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [mode, setMode] = useState("I");
 
     const test = (title: string) => {
         console.log(title)
@@ -23,11 +23,32 @@ const Login = () => {
             </View>
 
             <View>
+                {/* If we aren't in sign in mode */}
+                {mode != 'I' && <InputLogin 
+                    stateChanger={setEmail}
+                    labelContent="Email"  
+                    isPassword={ false }
+                />}
+
                 <InputLogin 
-                    stateChanger={test}
-                    labelContent="Test"  
-                    isPassword={ !false }
+                    stateChanger={setUsername}
+                    labelContent="Pseudo"  
+                    isPassword={ false }
                 />
+
+                {/* If we aren't in reset password mode */}
+                {mode != 'R' && <InputLogin 
+                    stateChanger={setPassword}
+                    labelContent="Mot de passe"  
+                    isPassword={ true }
+                />}
+
+                {/* If we are in sign up mode */}
+                {mode == 'U' && <InputLogin 
+                    stateChanger={setConfirmPassword}
+                    labelContent="Confirmer"
+                    isPassword={ true }
+                />}
             </View>
         </View>
     )

@@ -9,7 +9,7 @@ type LoginInformation = {
 
 const InputLogin = (loginInformation: LoginInformation) => {
     const { labelContent, isPassword, stateChanger } = loginInformation
-    const [hidden, setHidden]  = useState(isPassword);
+    const [hidden, setHidden] = useState(isPassword);
 
     return (
         <View>
@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
         color: '#7ED957',
     }, 
     topInputLogin: {
+        paddingTop: 20,
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between'
