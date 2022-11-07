@@ -9,8 +9,8 @@ const Login = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [mode, setMode] = useState("I");
 
-    const test = (title: string) => {
-        console.log(title)
+    const handleLogin = () => {
+        console.log(mode, username, password, confirmPassword, email);
     }
 
     return (
@@ -22,7 +22,7 @@ const Login = () => {
                 />
             </View>
 
-            <View>
+            <View style = {[ styles.mainFlex, styles.mainView, styles.flexCenter ]}>
                 {/* If we aren't in sign in mode */}
                 {mode != 'I' && <InputLogin 
                     stateChanger={setEmail}
@@ -49,7 +49,24 @@ const Login = () => {
                     labelContent="Confirmer"
                     isPassword={ true }
                 />}
+
+                <Pressable 
+                    onPress={() => handleLogin()}
+                    style={ styles.loginButton }
+                >
+                    <Text style={{ color: "#fff", }}>{ mode == "U" ? "Inscription" : mode == 'I' ? "Connexion" : "Reset password" }</Text>
+                </Pressable>
             </View>
+
+            <View style={styles.bottomLogin}>
+                <Text style={styles.toggleMode}>{ mode !== "U" ? "Pas de compte ?" : "Déjà un compte ?" }</Text>
+
+                <Pressable onPress={() => setMode((mode == "U" ? "I" : "U"))}>
+                    <Text style={[ styles.toggleMode, { color: "#14803a" }]}>
+                        { mode !== "U" ? "Inscrivez-vous ici !" : "Connectez-vous ici !" }
+                    </Text>
+                </Pressable>    
+            </View> 
         </View>
     )
 }
@@ -73,11 +90,40 @@ const styles = StyleSheet.create({
         display: "flex", 
         flexDirection: "column",
         alignItems: "center",
+        zIndex: -1
+    },
+
+    flexCenter: {
+        display: "flex", 
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        transform: [{ translateY: -35 }]
+    },
+
+    bottomLogin: {    
+        alignItems: "center",
+        position: "absolute",
+        bottom: 35,
     },
 
     logoImage: {
         width: 100,
         height: 100
+    }, 
+
+    loginButton: {
+        paddingHorizontal: 35, 
+        paddingVertical: 10,
+        borderRadius: 10, 
+        marginTop: 25,
+        alignItems: 'center',
+        justifyContent: 'center', 
+        backgroundColor: '#14803a', 
+    }, 
+
+    toggleMode: {
+        fontSize: 15
     }
 });
 

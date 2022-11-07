@@ -33,7 +33,7 @@ const InputLogin = (loginInformation: LoginInformation) => {
 const styles = StyleSheet.create({
     label: {
         fontSize: 16,
-        color: '#7ED957',
+        color: '#14803a',
     }, 
     topInputLogin: {
         paddingTop: 20,
@@ -43,12 +43,12 @@ const styles = StyleSheet.create({
     }, 
     textInput: {
         borderWidth: 1,
-        borderColor: '#7ED957',
+        borderColor: '#14803a',
     }, 
     showOptions: {
         letterSpacing: 1, 
         fontSize: 14,
-        color: '#7ED957',
+        color: '#14803a',
     }
 });
 
