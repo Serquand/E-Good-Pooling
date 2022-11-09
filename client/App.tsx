@@ -11,7 +11,7 @@ const {Navigator, Screen} = createNativeStackNavigator();
 export default function App() {
     return (
         <Nav>   
-            <Navigator initialRouteName='ListPeopleChat'>
+            <Navigator initialRouteName='Chat'>
                 <Screen name='Login' component={Login} options={{ headerShown: false }} />
                 <Screen name='Chat' component={Chat} options={{ headerShown: false }} />
                 <Screen name="ListPeopleChat" component={ListPeopleChat} options={{ headerShown: false }} />
