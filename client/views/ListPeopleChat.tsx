@@ -7,24 +7,24 @@ type People = {
     nickname: string;
     lastMessage: string;
     lastHour: string;
-    lastSender: string;
+    haveAPP: boolean;
     noSeenMessage: boolean;
 }
 
 const datas: Array<People> = [
     {
         noSeenMessage: false, 
+        haveAPP: false,        
         lastHour: "24/11",
         nickname: "Lucario", 
         lastMessage: "Luca ! Luca", 
-        lastSender: "Serquand"
     },
     {
         noSeenMessage: true, 
+        haveAPP: false,
         lastHour: "17:24", 
         nickname: "Raichu", 
         lastMessage: "Raiiiiiiiiiiiiiiiiiiiiiiiichhhhhhhhhhhhhuuuuuuuuuuuuuuuuuuuuu !",
-        lastSender: "Serquand"
     },
 ]
 
@@ -36,14 +36,14 @@ const ListPeopleChat = ({ navigation }: any, { routes }: any) => {
     }, [])
 
     return (
-        <ScrollView>
+        <ScrollView style={ styles.mainView }>
             {people.map((person: People, index: number) => (
                 <PeopleComponent 
                     key = { index }
                     noSeenMessage = { person.noSeenMessage }
                     lastHour = { person.lastHour }
                     nickname = { person.nickname }
-                    lastSender = { person.lastSender }
+                    haveAPP = { person.haveAPP }
                     lastMessage = { person.lastMessage }
                     navigation = { navigation }
                 />
@@ -53,7 +53,14 @@ const ListPeopleChat = ({ navigation }: any, { routes }: any) => {
 }
 
 const styles = StyleSheet.create({
-    
+    mainView: {
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: "white", 
+    },
 })
 
 export default ListPeopleChat;
