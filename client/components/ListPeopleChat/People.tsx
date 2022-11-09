@@ -11,7 +11,7 @@ type PeopleProps = {
 }
 
 const People = (peopleProps: PeopleProps) => {
-    const { nickname, lastMessage, lastHour, noSeenMessage, navigation } = peopleProps;
+    const { nickname, lastMessage, lastHour, lastSender, noSeenMessage, navigation } = peopleProps;
 
     const goPrecisedChat = () => navigation.navigate('Chat', { user: nickname })
 
@@ -25,8 +25,15 @@ const People = (peopleProps: PeopleProps) => {
                 <Image source={ require("../../assets/Logo.png") } />
             </View>
             
-            <View>
-                
+            <View style={{ display: "flex", flexDirection: "column" }}>
+                <View style={{ display: "flex", flexDirection: "row" }}>
+                    <Text>{ nickname }</Text>
+                    <Text>{ lastHour }</Text>
+                </View>
+
+                <View>
+                    <Text>{ (lastSender + ": " + lastMessage) }</Text>
+                </View>   
             </View>
         </Pressable>
     )
