@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { View, StyleSheet, Text, Pressable, Image, ScrollView } from 'react-native';
+import Message from '../components/Chat/Message';
 
 
 
@@ -13,7 +14,7 @@ const Chat = ({  }) => {
             <View style={ styles.headerChat }>
                 <Text style={ styles.userToTalk }>Marty</Text>
             </View>
-
+            <Message weSend={true} message="Test" />
 
         </View>
     )
