@@ -13,7 +13,10 @@ const HeaderChat = (props: HeaderChatProps) => {
 
     return (
         <View style={ styles.headerChat }>
-            <Pressable style={ styles.goBackPressable }>
+            <Pressable 
+                onPress={() => navigation.navigate("ListPeopleChat") }
+                style={ styles.goBackPressable }
+            >
                 <Image 
                     style={ styles.leftArrow }
                     source={ require("../../assets/LeftArrow.png") }
@@ -79,6 +82,7 @@ const styles = StyleSheet.create({
         bottom: 0, 
         left: 0,
         right: 0,
+        zIndex: -5
     },
 
     logoUser: {
@@ -119,7 +123,7 @@ const styles = StyleSheet.create({
         display: "flex", 
         flexDirection: "row", 
         alignItems: "center", 
-        gap: 5
+        gap: 5,         
     },
 });
 
