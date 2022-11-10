@@ -4,19 +4,21 @@ import { Text, View, StyleSheet } from 'react-native';
 type Message = {
     weSend: boolean;
     message: string;
+    sender: string;
 }
 
 const Message = (props: Message) => {
-    const { weSend, message } = props;
+    const { weSend, message, sender } = props;
 
     return (
-        <View style={[ styles.talkBubble, (!weSend ? styles.rotate : null) ]}>
-            <View style={[ styles.messageContainer, (weSend ? styles.weSend : styles.otherSend) ]}>
-                <Text style={[{ color: "white" }, (!weSend ? styles.rotate : null )]}>
+        <View style={[ styles.talkBubble, (weSend ? styles.rotate : null) ]}>
+            <View style={[ styles.messageContainer, (!weSend ? styles.weSend : styles.otherSend), (weSend ? styles.rotate : null ) ]}>
+                <Text style={ styles.senderText }>{ sender }</Text>
+                <Text style={{ color: "white" }}>
                     { message }
                 </Text>
             </View>
-            <View style={[ styles.talkBubbleSide, (weSend ? styles.weSendSide : styles.otherSendSide) ] }></View>
+            <View style={[ styles.talkBubbleSide, (!weSend ? styles.weSendSide : styles.otherSendSide) ] }></View>
         </View>
     )
 }
@@ -65,7 +67,15 @@ const styles = StyleSheet.create({
         borderBottomWidth: 6, 
         borderRightWidth: 15, 
         borderBottomColor: 'transparent'
-    }    
+    }, 
+
+    senderText: { 
+        color: "white", 
+        fontStyle: 'italic', 
+        fontWeight: "600", 
+        textDecorationLine: 'underline', 
+        marginBottom: 5 
+    }
 });
 
 export default Message;
