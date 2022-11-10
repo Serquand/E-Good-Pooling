@@ -23,6 +23,7 @@ const Message = (props: Message) => {
 
 const styles = StyleSheet.create({
     talkBubble: {
+        marginVertical: 3,
         backgroundColor: 'transparent', 
         marginHorizontal: 30, 
     }, 
