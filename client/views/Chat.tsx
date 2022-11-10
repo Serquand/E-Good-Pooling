@@ -5,10 +5,15 @@ import HeaderChat from '../components/Chat/HeaderChat';
 import Messages from '../components/Chat/Messages';
 
 
-const Chat = ({  }) => {
+const Chat = ({ navigation, routes }: any) => {
     return (
         <View style={ styles.mainView }>
-            <HeaderChat />
+            <HeaderChat 
+                nickname = "Lucario"
+                noSeenMessage = { 5 }
+                haveAPP = { false }
+                navigation = { navigation }
+            />
             <Messages />
         </View>
     )
