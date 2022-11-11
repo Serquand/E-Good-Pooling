@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput, View, StyleSheet, Pressable } from 'react-native';
+import { TextInput, View, StyleSheet, Pressable, Text } from 'react-native';
 
 type InputProfilProps = {
     information: string;
@@ -11,12 +11,21 @@ const InputProfil = (props: InputProfilProps) => {
     
     return (
         <View>
-
+            <TextInput />
+            <Pressable>
+                <Text>X</Text>
+            </Pressable>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        borderColor: "#555", 
+        borderBottomWidth: 1, 
+    }
 });
 
 export default InputProfil;

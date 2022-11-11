@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, TextInput, View, Image, Pressable } from 'react-native';
-import InputLogin from '../components/InputLogin';
+import InputLogin from '../components/Login/InputLogin';
 
 const Login = () => {
     const [username, setUsername] = useState("");
