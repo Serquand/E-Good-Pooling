@@ -18,7 +18,7 @@ const InputProfil = (props: InputProfilProps) => {
         <View style={ styles.container }>
             {(usernameModifier) ? 
                 <TextInput 
-                    value = { information?.toString() } 
+                    placeholder = { information?.toString() } 
                     onBlur = {() => updateUsername()}
                     onChangeText = {setUsername}
                 /> : 
