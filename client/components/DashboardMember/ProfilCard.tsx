@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, Pressable, TextInput, Text, StyleSheet, Image } from "react-native";
+import InputProfil from "./InputProfil";
 
 type userInformation = {
     username: string;
@@ -20,7 +21,7 @@ const fakeInformation: userInformation = {
 }
 
 const ProfilCard = (props: { username: string }) => {
-    const [user, setUser] = useState({} as userInformation);
+    const [user, setUser] = useState({} as userInformation); 
 
     useEffect(() => setUser(fakeInformation), [])
 
@@ -43,8 +44,12 @@ const ProfilCard = (props: { username: string }) => {
                 </Pressable>
             </View>
 
-            <View style={ styles.changeInfoContainer }>
-                
+            <View>
+                <InputProfil information={ user.firstName } usernameModifier = {false} />
+                <InputProfil information={ user.lastName } usernameModifier = {false} />
+                <InputProfil information={ user.email } usernameModifier = {false} />
+                <InputProfil information={ user.username } usernameModifier = {true} />
+                <InputProfil information={ user.numberTrip + " trajet" + (user.numberTrip >= 2 ? "s" : "") } usernameModifier = {false} />
             </View>
         </View>
     )
@@ -89,11 +94,10 @@ const styles = StyleSheet.create({
     container: {
         display: "flex",
         flexDirection: "row", 
-        alignItems: "center"
-    }, 
-
-    changeInfoContainer: {
-
+        alignItems: "center", 
+        justifyContent: "space-around",
+        width: '90%', 
+        marginHorizontal: "auto"
     }
 })
 
