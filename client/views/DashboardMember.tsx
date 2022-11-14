@@ -7,12 +7,33 @@ const DashboardMember = (props: { navigation: any }) => {
 
     return (
         <View>
-            <ProfilNav 
-                writtenText="Hello World"
-                borderColor="#1025BC" 
-                navigationRoute = "Login"
-                navigation = { navigation }
-            />  
+
+            <View>
+                <ProfilNav 
+                    writtenText="Notification"
+                    borderColor="#1D497C" 
+                    navigationRoute = "Login"
+                    navigation = { navigation }
+                />  
+                <ProfilNav 
+                    writtenText="Paramètres"
+                    borderColor="#B9D464" 
+                    navigationRoute = "Login"
+                    navigation = { navigation }
+                />  
+                <ProfilNav 
+                    writtenText="Historique"
+                    borderColor="#1D497C" 
+                    navigationRoute = "Login"
+                    navigation = { navigation }
+                />  
+                <ProfilNav 
+                    writtenText="Help"
+                    borderColor="grey" 
+                    navigationRoute = "Login"
+                    navigation = { navigation }
+                />  
+            </View>
         </View>
     )
 }
