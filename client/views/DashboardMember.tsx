@@ -1,11 +1,19 @@
 import React from 'react'
-import { ScrollView } from 'react-native';
+import { View } from 'react-native';
+import ProfilNav from '../components/DashboardMember/ProfilNav';
 
-const DashboardMember = () => {
+const DashboardMember = (props: { navigation: any }) => {
+    const { navigation } = props;
+
     return (
-        <ScrollView>
-            
-        </ScrollView>
+        <View>
+            <ProfilNav 
+                writtenText="Hello World"
+                borderColor="#1025BC" 
+                navigationRoute = "Login"
+                navigation = { navigation }
+            />  
+        </View>
     )
 }
 
