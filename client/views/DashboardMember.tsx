@@ -1,5 +1,6 @@
 import React from 'react'
 import { View } from 'react-native';
+import ProfilCard from '../components/DashboardMember/ProfilCard';
 import ProfilNav from '../components/DashboardMember/ProfilNav';
 
 const DashboardMember = (props: { navigation: any }) => {
@@ -7,7 +8,7 @@ const DashboardMember = (props: { navigation: any }) => {
 
     return (
         <View>
-
+            <ProfilCard />
             <View>
                 <ProfilNav 
                     writtenText="Notification"
