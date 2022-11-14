@@ -8,7 +8,7 @@ const DashboardMember = (props: { navigation: any }) => {
 
     return (
         <View>
-            <ProfilCard />
+            <ProfilCard username="Serquand" />
             <View>
                 <ProfilNav 
                     writtenText="Notification"
